@@ -43,6 +43,8 @@ variables so that emcc etc. are used. Typical usage:
     # See https://github.com/emscripten-core/emscripten/issues/15522
     args.append(f'-DCMAKE_CROSSCOMPILING_EMULATOR={node_js}')
 
+  args.append('-DCMAKE_POLICY_VERSION_MINIMUM=3.5')
+
   # Print a better error if we have no CMake executable on the PATH
   if not os.path.dirname(args[0]) and not shutil.which(args[0]):
     print(f'emcmake: cmake executable not found on PATH: `{args[0]}`', file=sys.stderr)
